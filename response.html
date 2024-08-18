@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Coding Questions</title>
+</head>
+<body>
+    <h1>Generated Coding Questions</h1>
+    
+    {% if questions %}
+        {% for difficulty, questions_list in questions.items() %}
+            <h2>{{ difficulty.capitalize() }} Questions:</h2>
+            <ol>
+                {% for question in questions_list %}
+                    <li>{{ question }}</li>
+                {% endfor %}
+            </ol>
+        {% endfor %}
+    {% else %}
+        <p>No questions were generated.</p>
+    {% endif %}
+    
+    <a href="/">Generate More Questions</a>
+</body>
+</html>
